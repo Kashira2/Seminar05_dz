@@ -1,24 +1,24 @@
-﻿int[] Massive()
+﻿double[] Massive()
 {   
     Console.WriteLine("Укажите размер массива: ");
     int N = int.Parse(Console.ReadLine());
-    int[] array = new int[N];
+    double[] array = new double[N];
     for (int i = 0; i < array.Length; i++)
     {
-        if (i != array.Length - 1) Console.Write($"{array[i] = new Random().Next(0, 100)}, ");
-        else Console.Write($"{array[i] = new Random().Next(0, 100)} ");
+        if (i != array.Length - 1) Console.Write($"{array[i] = new Random().Next(0, 100) + new Random().NextDouble()}  ");
+        else Console.Write($"{array[i] = new Random().Next(0, 100) + new Random().NextDouble()} ");
     }
     return array;
 }
 
-int[] array = Massive();
+double[] array = Massive();
 
 Console.WriteLine();
 
-string ArrayMaxMin(int[] array)
+string ArrayMaxMin(double[] array)
 {   
-    int max = 0;
-    int min = 100;
+    double max = 0;
+    double min = 100;
     double sum = 0;
     for (int i = 0; i < array.Length; i++)
     {
