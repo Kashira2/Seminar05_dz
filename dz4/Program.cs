@@ -1,20 +1,18 @@
-﻿  void palindrom(int num)
+﻿bool Palindrom(string n)
+{
+    for (int i = 1; i <= n.Length / 2; i++)
     {
-        int num1 = num;
-        if (num % 10 == num / 10000)
+        for (int j = n.Length - 1; j != i; j--)
         {
-            if ((num1 % 100)/10 == (num1/1000)%10)
-            {
-                Console.WriteLine($"Да");
-            }
-        }
-        else
-        {
-            Console.WriteLine($"Нет");
+            if (n[i] != n[n.Length - 1 - i]) return false;
+            else return true;
         }
     }
-    
-    Console.WriteLine("Введите число");
-    int N = int.Parse(Console.ReadLine());
-    palindrom(N);
+    return true;
+}
 
+Console.WriteLine("Введите число ");
+string N = Console.ReadLine();
+
+if (Palindrom(N) == true) Console.WriteLine("число является палиндромом ");
+else Console.WriteLine("число не является палиндромом ");
